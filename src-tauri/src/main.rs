@@ -70,6 +70,7 @@ unsafe fn convert_all_processes_to_json() -> Result<String, Error> {
 #[tauri::command]
 fn get_all_windows() -> String {
     unsafe {
+        ALL_PROCESSES = vec![];
         EnumWindows(Some(enum_windows_proc), 0);
         let output = convert_all_processes_to_json().expect("");
         output
