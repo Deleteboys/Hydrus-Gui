@@ -13,7 +13,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
+* {
+  overflow-y: hidden !important;
+}
 .container {
   margin: 0;
   padding-top: 10vh;
