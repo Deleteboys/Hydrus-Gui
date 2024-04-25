@@ -1,10 +1,4 @@
 <template>
-  <!--  <v-card class="fill-height">-->
-  <!--    <v-card-title class="text-center" style="font-size: 2.5em; margin-top: 20px; margin-bottom: 20px">Hydrus</v-card-title>-->
-  <!--    <v-card>-->
-  <!--      <v-select></v-select>-->
-  <!--    </v-card>-->
-  <!--  </v-card>-->
   <v-container class="fill-height" fluid>
     <v-responsive class="d-flex justify-center fill-height">
       <v-card-title class="text-center text-h3" style="margin-bottom: 20px">Hydrus</v-card-title>
