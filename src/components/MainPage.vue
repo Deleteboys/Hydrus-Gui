@@ -11,7 +11,7 @@
       <v-card class="rounded-xl" style="height: 84%" elevation="0">
         <v-card-actions>
           <v-btn-toggle style="margin: 0 auto 0 auto;" variant="outlined" color="primary" divided
-                        v-model="applicationType" mandatory>
+                        v-model="applicationType" mandatory @update:modelValue="update_process_list">
             <v-btn>Windows</v-btn>
             <v-btn>Processes</v-btn>
           </v-btn-toggle>

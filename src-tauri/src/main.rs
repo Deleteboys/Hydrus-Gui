@@ -70,7 +70,7 @@ fn enum_processes() {
                             exe_name = string;
                         }
                     }
-                    println!("{:?} {:?}", proc_entry.th32ProcessID, exe_name.clone());
+
                     let process_id = format!("{:#0X}", proc_entry.th32ProcessID);
                     ALL_PROCESSES.push(Process {
                         process_id: process_id.to_string(),
