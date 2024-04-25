@@ -72,9 +72,10 @@ fn enum_processes() {
                     }
 
                     let process_id = format!("{:#0X}", proc_entry.th32ProcessID);
+                    let name_with_id = format!("[{}] - {}", process_id, exe_name.to_string());
                     ALL_PROCESSES.push(Process {
                         process_id: process_id.to_string(),
-                        name: exe_name.to_string(),
+                        name: name_with_id.to_string(),
                     });
                     if Process32Next(snapshot, &mut proc_entry as *mut PROCESSENTRY32) == 0 {
                         break;
@@ -104,10 +105,11 @@ extern "system" fn enum_windows_proc(hwnd: HWND, _: LPARAM) -> BOOL {
         GetWindowThreadProcessId(hwnd, &mut buf);
         //format u32 to hex
         let process_id = format!("{:#0X}", buf);
+        let name_with_id = format!("[{}] - {}", process_id, window_title.to_str().unwrap().to_string());
 
         ALL_PROCESSES.push(Process {
             process_id: process_id.to_string(),
-            name: window_title.to_str().unwrap().to_string(),
+            name: name_with_id.to_string(),
         });
         return 1;
     }

@@ -82,8 +82,12 @@ export default {
       }
     },
     async inject_dll() {
-      this.inject_output = await invoke("inject_dll", {processId: this.process, dllPath: this.dll_path});
-      alert(this.inject_output)
+      if (this.process !== "" && this.process !== null && this.dll_path !== "" && this.dll_path !== null) {
+        this.inject_output = await invoke("inject_dll", {processId: this.process, dllPath: this.dll_path});
+        alert(this.inject_output)
+      } else {
+        alert("Error")
+      }
     }
   },
   mounted() {
