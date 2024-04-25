@@ -54,7 +54,13 @@ export default {
   },
   methods: {
     async readPath() {
-      const path = await open({multiple: false})
+      const path = await open({
+        multiple: false,
+        filters: [{
+          name: 'DLL',
+          extensions: ['dll']
+        }]
+      })
       this.dll_path = path
     },
     async update_process_list() {
